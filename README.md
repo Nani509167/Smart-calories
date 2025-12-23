@@ -2,10 +2,6 @@
 
 **SmartCalories** is a premium, AI-powered nutrition tracking application designed for a seamless mobile experience. It leverages the latest **Google Gemini AI** models to estimate calories and macronutrients from food names or images, eliminating the need for tedious manual data entry.
 
-<p align="center">
-  <img src="screenshots/hero.png" width="800" />
-</p>
-
 ## 📱 App Preview
 
 <p align="center">
