@@ -4,6 +4,7 @@ import { AddFoodText } from './components/AddFoodText';
 import { ScanFood } from './components/ScanFood';
 import { ResultsScreen } from './components/ResultsScreen';
 import { HealthCoach } from './components/HealthCoach';
+import { WeeklyReport } from './components/WeeklyReport';
 import { ProfileSetup } from './components/ProfileSetup';
 import { BottomNav } from './components/BottomNav';
 import { AppContainer } from './components/AppContainer';
@@ -53,6 +54,8 @@ export default function App() {
         );
       case 'coach':
         return <HealthCoach onNavigate={handleNavigate} />;
+      case 'report':
+        return <WeeklyReport onNavigate={handleNavigate} />;
       default:
         return <HomeDashboard onNavigate={handleNavigate} />;
     }

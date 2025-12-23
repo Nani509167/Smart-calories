@@ -1,4 +1,4 @@
-import { Home, Plus, Camera, MessageCircle } from 'lucide-react';
+import { Home, Plus, Camera, MessageCircle, BarChart2 } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface BottomNavProps {
@@ -9,6 +9,7 @@ interface BottomNavProps {
 export function BottomNav({ activeScreen, onNavigate }: BottomNavProps) {
   const navItems = [
     { id: 'home', label: 'Home', icon: Home },
+    { id: 'report', label: 'Report', icon: BarChart2 },
     { id: 'add-text', label: 'Add', icon: Plus },
     { id: 'scan', label: 'Scan', icon: Camera },
     { id: 'coach', label: 'Coach', icon: MessageCircle },
@@ -25,7 +26,7 @@ export function BottomNav({ activeScreen, onNavigate }: BottomNavProps) {
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeScreen === item.id;
-            
+
             return (
               <motion.button
                 key={item.id}
@@ -34,20 +35,17 @@ export function BottomNav({ activeScreen, onNavigate }: BottomNavProps) {
                 className="flex flex-col items-center gap-1 relative"
               >
                 <div
-                  className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-all ${
-                    isActive ? 'bg-primary' : 'bg-transparent'
-                  }`}
+                  className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-all ${isActive ? 'bg-primary' : 'bg-transparent'
+                    }`}
                 >
                   <Icon
-                    className={`w-6 h-6 transition-colors ${
-                      isActive ? 'text-primary-foreground' : 'text-muted-foreground'
-                    }`}
+                    className={`w-6 h-6 transition-colors ${isActive ? 'text-primary-foreground' : 'text-muted-foreground'
+                      }`}
                   />
                 </div>
                 <span
-                  className={`text-xs transition-colors ${
-                    isActive ? 'text-foreground font-semibold' : 'text-muted-foreground'
-                  }`}
+                  className={`text-xs transition-colors ${isActive ? 'text-foreground font-semibold' : 'text-muted-foreground'
+                    }`}
                 >
                   {item.label}
                 </span>
