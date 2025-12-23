@@ -2,10 +2,10 @@ import { StorageService, UserProfile, MealLog } from './storage';
 
 // In a real production app, use a more secure way to handle keys.
 // For individual local use, this constant is sufficient.
-const GEMINI_API_KEY = 'AIzaSyA18iX_guj7A2FWUVseL5BJrIsFDWn9D4s';
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
-if ((GEMINI_API_KEY as string) === 'AIzaSyA18iX_guj7A2FWUVseL5BJrIsFDWn9D4s' || !GEMINI_API_KEY) {
-    console.error('CRITICAL: Gemini API Key is missing or using placeholder! AI will not work.');
+if (!GEMINI_API_KEY) {
+    console.error('CRITICAL: Gemini API Key is missing! Ensure VITE_GEMINI_API_KEY is set in .env');
 }
 
 // Fallback model list to try if primary fails (404)
